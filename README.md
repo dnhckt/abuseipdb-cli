@@ -2,6 +2,7 @@
 CLI tool to check if an IP is reported as malicious 
 # Install
 
+
 # Use
 
 ## General use
@@ -17,6 +18,6 @@ CLI tool to check if an IP is reported as malicious
 ## Optional parameters
 
 If an IP starts with 192 / 172:<br>
-`Is this IP Public?: False`<br>
+`Is this IP Public?: False`<br><br>
 If an IP has been reported: <br>
 `iptables -A INPUT -s <IP> -j DROP`<br>
