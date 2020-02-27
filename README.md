@@ -4,18 +4,17 @@
 
 [root@testbox abuseipdb-cli]# ipdb 192.168.0.1<br>
 
-====================================================<br>
+`====================================================`<br>
 
-Results for 192.168.0.1<br>
-===<br>
-Private IP<br>
-Country: None<br>
-Owner: None<br>
-Abuse confidence: 0 %<br>
-Times reported: 86<br>
+`Results for 192.168.0.1`<br>
+`===`<br>
+`Private IP`<br>
+`Country: None`<br>
+`Owner: None`<br>
+`Abuse confidence: 0 %`<br>
+`Times reported: 86`<br>
 
-====================================================<br>
-
+`====================================================`<br>
 
 ## Optional output
 
