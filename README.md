@@ -2,8 +2,7 @@
 
 ## General use
 
-[root@testbox abuseipdb-cli]# ipdb 192.168.0.1<br>
-
+`python abusecheck.py 192.168.0.1`<br>
 `====================================================`<br>
 
 `Results for 192.168.0.1`<br>
