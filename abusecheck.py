@@ -1,6 +1,7 @@
 import os, sys, requests, json
 
-API_KEY = os.environ.get("ABUSE_API_KEY")
+ABUSE_API_KEY = os.environ.get("ABUSE_API_KEY")
+
 
 def checkIP(dodgyIP):
     url = "https://api.abuseipdb.com/api/v2/check"  
@@ -12,7 +13,7 @@ def checkIP(dodgyIP):
 
     headers = {
     "Accept": "application/json",
-    "Key": API_KEY,
+    "Key": ABUSE_API_KEY,
     }
 
     response = requests.request(method="GET", url=url, headers=headers, params=querystring)
@@ -20,27 +21,29 @@ def checkIP(dodgyIP):
 
     # output
     print ""
-    print "##########"    
+    print "===================================================="    
+    print ""
     print "Results for", decodedResponse["data"]["ipAddress"]
     print "==="
 
     # If the IP may be private, check
     if ( "172" in decodedResponse["data"]["ipAddress"] or "192" in decodedResponse["data"]["ipAddress"]):
-        print "Is this IP Public?:", decodedResponse["data"]["isPublic"]
 
-    print "This IP seems to be from", decodedResponse["data"]["countryCode"], "and is owned by",  decodedResponse["data"]["domain"]
+        if (decodedResponse["data"]["isPublic"] == False):
+            print "Private IP"
 
-    print "There is", decodedResponse["data"]["abuseConfidenceScore"],"% confidence this is abusive. Previously reported", decodedResponse["data"]["totalReports"], "times"
+    print "Country:", decodedResponse["data"]["countryCode"]
+    print "Owner:",  decodedResponse["data"]["domain"]
 
-    print ""
-
+    print "Abuse confidence:", decodedResponse["data"]["abuseConfidenceScore"], "%"
+    print "Times reported:", decodedResponse["data"]["totalReports"]
+    
     if (decodedResponse["data"]["abuseConfidenceScore"] > 0):
         print "iptables -A INPUT -s " + decodedResponse["data"]["ipAddress"] + " -j DROP"
-
+        
     print ""
-    print "##########"
+    print "===================================================="    
     print ""
-
 
 IPnum = len(sys.argv)
 
