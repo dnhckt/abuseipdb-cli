@@ -1,7 +1,6 @@
 import os, sys, requests, json
 
-ABUSE_API_KEY = os.environ.get("ABUSE_API_KEY") # You'll need to add your abuseipdb.com API Key as an environment variable :) 
-
+ABUSE_API_KEY = os.environ.get("ABUSE_API_KEY") # This assumes install.sh has been ran, or you've got your API Key saved as an environment variable
 
 def checkIP(dodgyIP):
     url = "https://api.abuseipdb.com/api/v2/check"  
