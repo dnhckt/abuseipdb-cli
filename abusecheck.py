@@ -25,9 +25,10 @@ def checkIP(dodgyIP):
     print "Results for", decodedResponse["data"]["ipAddress"]
     print "==="
 
-    # If the IP may be private, check
+    # If the IP might be private, check. Not including 10.0.0 ranges as they're less ambiguous
     if ( "172" in decodedResponse["data"]["ipAddress"] or "192" in decodedResponse["data"]["ipAddress"]):
 
+        # Uses API isPublic to verify, not logic above 
         if (decodedResponse["data"]["isPublic"] == False):
             print "Private IP"
 
