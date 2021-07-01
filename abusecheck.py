@@ -1,6 +1,6 @@
 import os, sys, requests, json
 
-ABUSE_API_KEY = os.environ.get("ABUSE_API_KEY")
+ABUSE_API_KEY = os.environ.get("ABUSE_API_KEY") # You'll need to add your abuseipdb.com API Key as an environment variable :) 
 
 
 def checkIP(dodgyIP):
