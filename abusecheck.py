@@ -39,7 +39,7 @@ def checkIP(dodgyIP):
     print "Times reported:", decodedResponse["data"]["totalReports"]
     
     if (decodedResponse["data"]["abuseConfidenceScore"] > 0):
-        print "iptables -A INPUT -s " + decodedResponse["data"]["ipAddress"] + " -j DROP"
+        print "iptables -I INPUT -s " + decodedResponse["data"]["ipAddress"] + " -j DROP"
         
     print ""
     print "===================================================="    
