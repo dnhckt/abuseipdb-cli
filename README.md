@@ -4,8 +4,8 @@ Command line tool to pull ipdb results from https://www.abuseipdb.com using the 
 
 # Prerequisites
 
-Sign up on abuseipdb and generate an API key<br>
-Assign your API KEY to the environmental variable "ABUSE_API_KEY" (or run install.sh).
+* Sign up on abuseipdb and generate an API key<br>
+* Assign your API KEY to the environmental variable "ABUSE_API_KEY" (or run install.sh).
 
 # Install
 
