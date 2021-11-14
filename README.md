@@ -6,11 +6,29 @@ Pulls ipdb results from https://www.abuseipdb.com using the [api](https://docs.a
 
 Sign up on abuseipdb and generate an API key, the script relies on this being assigned to the environmental variable "ABUSE_API_KEY".
 
-# Use
+# Install
 
-## General use
+`wget https://raw.githubusercontent.com/dnhckt/abuseipdb-cli/master/abusecheck.sh` 
+<br>
+`chmod +x abusecheck.sh`
+<br>
+`./abusecheck <IP>` 
 
-`python abusecheck.py 192.168.0.1`<br>
+## Optional, but recommended
+
+Must be ran in the same directory as the abusecheck.sh file.
+
+`wget https://raw.githubusercontent.com/dnhckt/abuseipdb-cli/master/install.sh` 
+<br>
+`chmod +x install.sh` 
+<br>
+`./install.sh` 
+<br>
+` Enter your API key: (paste and enter)` 
+
+# Example use 
+
+`ipdb 192.168.0.1`<br>
 `====================================================`<br>
 
 `Results for 192.168.0.1`<br>
