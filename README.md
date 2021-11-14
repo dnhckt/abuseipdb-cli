@@ -1,3 +1,11 @@
+# About
+
+Pulls ipdb results from https://www.abuseipdb.com using the [api](https://docs.abuseipdb.com/#introduction).
+
+# Prerequisites
+
+Sign up on abuseipdb and generate an API key, the script relies on this being assigned to the environmental variable "ABUSE_API_KEY".
+
 # Use
 
 ## General use
@@ -21,4 +29,4 @@ If an IP is private <br>
 `This is a Private address`<br><br>
 
 If an IP has been reported: <br>
-`iptables -A INPUT -s <IP> -j DROP`<br>
+`iptables -I INPUT -s <IP> -j DROP`<br>
