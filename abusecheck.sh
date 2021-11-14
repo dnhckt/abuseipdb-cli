@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os, sys, requests, json
 
@@ -21,36 +21,36 @@ def checkIP(dodgyIP):
     decodedResponse = json.loads(response.text)
 
     # output
-    print ""
-    print "===================================================="    
-    print ""
-    print "Results for", decodedResponse["data"]["ipAddress"]
-    print "==="
+    print("")
+    print("====================================================")    
+    print("")
+    print("Results for", decodedResponse["data"]["ipAddress"])
+    print("===")
 
     # If the IP might be private, check. Not including 10.0.0 ranges as they're less ambiguous
     if ( "172" in decodedResponse["data"]["ipAddress"] or "192" in decodedResponse["data"]["ipAddress"]):
 
         # Uses API isPublic to verify, not logic above 
         if (decodedResponse["data"]["isPublic"] == False):
-            print "Private IP"
+            print("Private IP")
 
-    print "Country:", decodedResponse["data"]["countryCode"]
-    print "Owner:",  decodedResponse["data"]["domain"]
+    print("Country:", decodedResponse["data"]["countryCode"])
+    print("Owner:",  decodedResponse["data"]["domain"])
 
-    print "Abuse confidence:", decodedResponse["data"]["abuseConfidenceScore"], "%"
-    print "Times reported:", decodedResponse["data"]["totalReports"]
+    print("Abuse confidence:", decodedResponse["data"]["abuseConfidenceScore"], "%")
+    print("Times reported:", decodedResponse["data"]["totalReports"])
     
     if (decodedResponse["data"]["abuseConfidenceScore"] > 0):
-        print "iptables -I INPUT -s " + decodedResponse["data"]["ipAddress"] + " -j DROP"
+        print("iptables -I INPUT -s " + decodedResponse["data"]["ipAddress"] + " -j DROP")
         
-    print ""
-    print "===================================================="    
-    print ""
+    print("")
+    print("====================================================")    
+    print("")
 
 IPnum = len(sys.argv)
 
 if (IPnum-1) == 0:
-    print "No arguments given"
+    print("No arguments given")
 
 if (IPnum-1) == 1:
     checkIP(str(sys.argv[1]))
@@ -61,4 +61,4 @@ for x in range(2,6):
             checkIP(str(sys.argv[y]))
 
 if IPnum > 6:
-    print "Invalid input" 
+    print("Invalid input") 
