@@ -1,6 +1,6 @@
 # About
 
-Command line tool to pull ipdb results from https://www.abuseipdb.com using the [api](https://docs.abuseipdb.com/#introduction).
+Command line tool to pull ipdb results from https://www.abuseipdb.com using the [API](https://docs.abuseipdb.com/#introduction).
 
 # Prerequisites
 
